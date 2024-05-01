@@ -1,6 +1,6 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { blogCategoryRobots, getStaticPathsBlogCategory } from '@/utils/blog';
+import { getStaticPathsBlogCategory } from '@/utils/blog';
 
 import Layout from '@/layouts/PageLayout.astro';
 import BlogList from '@/components/blog/List.astro';
@@ -21,10 +21,6 @@ const currentPage = page.currentPage ?? 1;
 
 const metadata = {
   title: `Category '${category.title}' ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
-  robots: {
-    index: blogCategoryRobots?.index,
-    follow: blogCategoryRobots?.follow,
-  },
 };
 ---
 

@@ -5,7 +5,7 @@ import Header from '@/components/widgets/Header.astro';
 import Hero from '@/components/widgets/Hero.astro';
 import Content from '@/components/widgets/Content.astro';
 import CallToAction from '@/components/widgets/CallToAction.astro';
-import Features3 from '@/components/widgets/Features3.astro';
+import Features from '@/components/widgets/Features.astro';
 import Steps from '@/components/widgets/Steps.astro';
 import BlogLatestPosts from '@/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '@/utils/permalinks';
@@ -16,7 +16,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
       links={[
@@ -148,7 +147,7 @@ const metadata = {
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
+  <Features
     title="Skills"
     subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
     columns={3}

@@ -1,14 +1,11 @@
-import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import type { PaginateFunction } from 'astro';
+
 import type { Post } from '@/types';
-const APP_BLOG = {
-  list: { pathname: '/blog' },
-  category: { pathname: '/category' },
-  tag: { pathname: '/tag' },
-  post: { permalink: '/blog/%slug%' },
-};
-import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import { cleanSlug, trimSlash, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+
+let _posts: Array<Post>;
 
 const generatePermalink = async ({
   id,
@@ -62,7 +59,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     metadata = {},
   } = data;
 
-  const slug = cleanSlug(rawSlug); // cleanSlug(rawSlug.split('/').pop());
+  const slug = cleanSlug(rawSlug);
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
@@ -108,34 +105,12 @@ const load = async function (): Promise<Array<Post>> {
   return results;
 };
 
-let _posts: Array<Post>;
-
-// export const blogListRobots = APP_BLOG.list.robots;
-// export const blogPostRobots = APP_BLOG.post.robots;
-// export const blogCategoryRobots = APP_BLOG.category.robots;
-// export const blogTagRobots = APP_BLOG.tag.robots;
-
-// export const blogPostsPerPage = APP_BLOG?.postsPerPage;
-
 export const fetchPosts = async (): Promise<Array<Post>> => {
   if (!_posts) {
     _posts = await load();
   }
 
   return _posts;
-};
-
-export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
-  if (!Array.isArray(slugs)) return [];
-
-  const posts = await fetchPosts();
-
-  return slugs.reduce(function (r: Array<Post>, slug: string) {
-    posts.some(function (post: Post) {
-      return slug === post.slug && r.push(post);
-    });
-    return r;
-  }, []);
 };
 
 export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> => {
@@ -186,7 +161,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
     paginate(
       posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
       {
-        params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
+        params: { category: categorySlug },
         pageSize: 10,
         props: { category: (categories as any)[categorySlug] },
       }
@@ -208,7 +183,7 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
     paginate(
       posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.slug === tagSlug)),
       {
-        params: { tag: tagSlug, blog: TAG_BASE || undefined },
+        params: { tag: tagSlug },
         pageSize: 10,
         props: { tag: (tags as any)[tagSlug] },
       }

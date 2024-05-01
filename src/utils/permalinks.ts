@@ -24,7 +24,7 @@ const createPath = (...params: string[]) => {
   return '/' + paths + (SITE.trailingSlash && paths ? '/' : '');
 };
 
-const BASE_PATHNAME = SITE.base || '/';
+const BASE_PATHNAME = SITE.base;
 
 export const cleanSlug = (text = '') =>
   trimSlash(text)
@@ -34,11 +34,10 @@ export const cleanSlug = (text = '') =>
 
 export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);
 export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname);
-export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
+export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname);
 
 export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${BLOG_BASE}/%slug%`);
 
-/** */
 export const getCanonical = (path = ''): string | URL => {
   const url = String(new URL(path, SITE.site));
   if (SITE.trailingSlash == false && path && url.endsWith('/')) {
@@ -49,7 +48,6 @@ export const getCanonical = (path = ''): string | URL => {
   return url;
 };
 
-/** */
 export const getPermalink = (slug = '', type = 'page'): string => {
   let permalink: string;
 
@@ -108,7 +106,6 @@ export const getAsset = (path: string): string =>
 
 const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
 
-/** */
 export const applyGetPermalinks = (menu: object = {}) => {
   if (Array.isArray(menu)) {
     return menu.map((item) => applyGetPermalinks(item));

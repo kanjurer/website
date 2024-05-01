@@ -43,15 +43,6 @@ const seoProps: AstroSeoProps = merge(
       cardType: openGraph?.images?.length ? 'summary_large_image' : 'summary',
     },
   },
-  // {
-  //   title: METADATA?.title?.default,
-  //   titleTemplate: METADATA?.title?.template,
-  //   noindex: typeof METADATA?.robots?.index !== 'undefined' ? !METADATA.robots.index : undefined,
-  //   nofollow: typeof METADATA?.robots?.follow !== 'undefined' ? !METADATA.robots.follow : undefined,
-  //   description: METADATA?.description,
-  //   openGraph: METADATA?.openGraph,
-  //   twitter: METADATA?.twitter,
-  // },
   {
     title: title,
     titleTemplate: ignoreTitleTemplate ? '%s' : undefined,
