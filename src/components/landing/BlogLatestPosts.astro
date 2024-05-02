@@ -1,0 +1,50 @@
+---
+import Grid from '@/components/blog/Grid.astro';
+
+import { getBlogPermalink } from '@/utils/permalinks';
+import { findLatestPosts } from '@/utils/blog';
+import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
+import type { Widget } from '@/types';
+import Button from '../ui/Button.astro';
+
+export interface Props extends Widget {
+  title?: string;
+  linkText?: string;
+  linkUrl?: string | URL;
+  information?: string;
+  count?: number;
+}
+
+const linkText = 'View all posts';
+const linkUrl = getBlogPermalink();
+
+const { count = 4, isDark = false, classes = {} } = Astro.props;
+
+const posts = await findLatestPosts({ count });
+---
+
+<WidgetWrapper
+  id="id"
+  isDark={isDark}
+  containerClass={classes?.container as string}
+  bg={'<div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>'}
+>
+  <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
+    <div class="md:max-w-sm">
+      <h2
+        class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
+        set:html="Explore my insightful articles on my blog"
+      />
+
+      <Button variant="link" href={linkUrl}>
+        {linkText} »
+      </Button>
+    </div>
+
+    <p
+      class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md"
+      set:html="Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey."
+    />
+  </div>
+  <Grid posts={posts} />
+</WidgetWrapper>
