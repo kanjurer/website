@@ -1,0 +1,34 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import ProjectsSection from '@/components/landing/Projects.astro';
+import Header from '@/components/widgets/Header.astro';
+
+const metadata = {
+  title: 'kanjurer website',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '#' },
+        { text: 'About', href: '#about' },
+        { text: 'Resume', href: '#resume' },
+        { text: 'Porfolio', href: '#porfolio' },
+        { text: 'Blog', href: '#blog' },
+        { text: 'Github', href: 'https://github.com/kanjurer' },
+      ]}
+      actions={[
+        {
+          text: 'Resume',
+          href: '/resume-pdf',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <ProjectsSection />
+</Layout>

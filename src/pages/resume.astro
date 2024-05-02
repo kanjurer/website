@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+
+import Header from '@/components/widgets/Header.astro';
+import WorkExperience from '@/components/landing/WorkExperience.astro';
+import Education from '@/components/landing/Education.astro';
+
+const metadata = {
+  title: 'kanjurer website',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header isSticky />
+  </Fragment>
+  <Education />
+  <WorkExperience />
+</Layout>

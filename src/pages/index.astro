@@ -5,10 +5,7 @@ import Pfp from '@/assets/images/pfp.png';
 import Header from '@/components/widgets/Header.astro';
 import Hero from '@/components/widgets/Hero.astro';
 import Content from '@/components/widgets/Content.astro';
-import WorkExperience from '@/components/landing/WorkExperience.astro';
-import Education from '@/components/landing/Education.astro';
 import BlogLatestPosts from '@/components/landing/BlogLatestPosts.astro';
-import Projects from '@/components/landing/Projects.astro';
 import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
@@ -106,9 +103,5 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <WorkExperience />
-  <Education />
-  <Projects />
   <BlogLatestPosts />
 </Layout>
