@@ -217,3 +217,15 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+export interface Steps extends Omit<Headline, 'classes'>, Widget {
+  items: Array<{
+    title: string;
+    description?: string;
+    icon?: string;
+    classes?: Record<string, string>;
+  }>;
+  callToAction?: string | CallToAction;
+  image?: string | Image;
+  isReversed?: boolean;
+}

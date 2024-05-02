@@ -1,17 +1,16 @@
 ---
 import Layout from '@/layouts/PageLayout.astro';
 
+import Pfp from '@/assets/images/pfp.png';
 import Header from '@/components/widgets/Header.astro';
 import Hero from '@/components/widgets/Hero.astro';
 import Content from '@/components/widgets/Content.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
-import Features from '@/components/widgets/Features.astro';
 import Steps from '@/components/widgets/Steps.astro';
 import BlogLatestPosts from '@/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: 'kanjurer website',
 };
 ---
 
@@ -24,7 +23,7 @@ const metadata = {
         { text: 'Resume', href: '#resume' },
         { text: 'Porfolio', href: '#porfolio' },
         { text: 'Blog', href: '#blog' },
-        { text: 'Github', href: 'https://github.com/onwidget' },
+        { text: 'Github', href: 'https://github.com/kanjurer' },
       ]}
       actions={[
         {
@@ -80,10 +79,11 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src: Pfp,
       alt: 'Colorful Image',
       loading: 'eager',
     }}
+    isReversed
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
@@ -105,8 +105,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
-
   <Steps
     id="resume"
     title="Work experience"
@@ -127,8 +125,6 @@ const metadata = {
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Steps Widget ****************** -->
-
   <Steps
     id="resume"
     title="Education"
@@ -144,55 +140,6 @@ const metadata = {
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features
-    title="Skills"
-    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
-    columns={3}
-    defaultIcon="tabler:point-filled"
-    items={[
-      {
-        title: 'Graphic design',
-        description: 'Proficient in crafting visually appealing designs that convey messages effectively.',
-      },
-      {
-        title: 'Branding and identity',
-        description: 'Skilled at developing cohesive brand identities, including logos and brand guidelines.',
-      },
-      {
-        title: 'User-centered design',
-        description: 'Experienced in creating user-friendly interfaces and optimizing user experiences.',
-      },
-      {
-        title: 'Adobe Creative Suite',
-        description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
-      },
-      {
-        title: 'Typography',
-        description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
-      },
-      {
-        title: 'Color theory',
-        description: 'Proficient in using color to evoke emotions and enhance visual harmony.',
-      },
-      {
-        title: 'Print and digital design',
-        description: 'Knowledgeable in designing for both print materials and digital platforms.',
-      },
-      {
-        title: 'Attention to detail',
-        description: 'Diligent in maintaining precision and quality in all design work.',
-      },
-      {
-        title: 'Adaptability',
-        description: 'Quick to adapt to new design trends, technologies, and client preferences.',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
 
   <Content
     id="porfolio"
@@ -233,8 +180,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
     isAfterContent={true}
@@ -271,8 +216,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
     isAfterContent={true}
@@ -307,22 +250,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Let's create together"
-    subtitle="Ready to transform your vision into captivating designs?"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Hire me',
-        href: '/',
-      },
-    ]}
-  />
-
-  <!-- BlogLatestPost Widget **************** -->
 
   <BlogLatestPosts
     id="blog"
