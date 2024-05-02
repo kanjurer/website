@@ -1,0 +1,60 @@
+---
+import Pfp from '@/assets/images/pfp.png';
+import Content from '@/components/widgets/Content.astro';
+---
+
+<Content
+  id="about"
+  columns={3}
+  items={[
+    {
+      icon: 'github-mark',
+      callToAction: {
+        target: '_blank',
+        text: 'Github',
+        href: 'https://github.com/kanjurer',
+      },
+    },
+    {
+      icon: 'tabler:brand-linkedin',
+      callToAction: {
+        target: '_blank',
+        text: '',
+        href: 'https://linkedin.com/in/kanav-bhardwaj',
+      },
+    },
+    {
+      icon: 'tabler:brand-pinterest',
+      callToAction: {
+        target: '_blank',
+        text: 'Pinterest',
+        href: '#',
+      },
+    },
+  ]}
+  image={{
+    src: Pfp,
+    alt: 'Colorful Image',
+    loading: 'eager',
+  }}
+  isReversed
+>
+  <Fragment slot="content">
+    <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+    <p>
+      Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
+      pixel becomes a brushstroke in the canvas of imagination.
+    </p>
+    <br />
+    <p>
+      I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details
+      of typography, or the vibrant hues of nature during my outdoor escapades.
+    </p>
+    <br />
+    <p>If you're curious to dive deeper into my work, you can follow me:</p>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>

@@ -3,7 +3,7 @@ import Steps from '@/components/widgets/Steps.astro';
 import data from '@/assets/data/data.json';
 
 const items = data.resume.workExperience.map((item) => ({
-  title: `${item.position} <br /> <span class="font-normal">${item.company}, ${item.location}</span> <br /> <span class="text-sm font-normal">${item.startDate} - ${item.endDate}</span>`,
+  title: `${item.position} <br /> <span class="font-normal">${item.company}</span> <br /> <span class="text-sm font-normal"> ${item.location} </span> <br /> <span class="text-sm font-normal">${item.startDate} - ${item.endDate}</span>`,
   description: item.description.join('<br />'),
   icon: 'tabler:briefcase',
 }));

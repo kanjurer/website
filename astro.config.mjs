@@ -12,7 +12,7 @@ import {
 } from './src/utils/frontmatter.mjs';
 
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://www.kanjurer.xyz',
   output: 'static',
   integrations: [
     tailwind({
