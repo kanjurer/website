@@ -1,0 +1,54 @@
+{
+  "resume": {
+    "education": [
+      {
+        "degree": "Bachelor of Computer Science",
+        "school": "Dalhousie University",
+        "location": "Halifax, NS",
+        "startDate": "Jan 2021",
+        "endDate": "Apr 2025",
+        "gpa": "4.25/4.30"
+      }
+    ],
+    "workExperience": [
+      {
+        "position": "Software Developer Intern",
+        "company": "Magnet Forensics",
+        "location": "Waterloo, ON",
+        "startDate": "May 2023",
+        "endDate": "Dec 2023",
+        "description": [
+          "Developed REST APIs using .NET, C#, Jenkins, and Clojure for digital investigation analysis and automated job processing",
+          "Enhanced the workflow builder using React, Redux and contributed to the migration from Clojure to .NET backend",
+          "Implemented latest testing standards in React@18, Jest, Cypress and led the migration from Enzyme to RTL",
+          "Assisted in Keycloak integration to facilitate the separation of User Service and enable OIDC authentication using JWTs",
+          "Contributed to velocity enablement by reducing technical debt, addressing build failures, and customer support requests"
+        ]
+      },
+      {
+        "position": "Frontend Developer Intern",
+        "company": "Genesys",
+        "location": "Kitchener, ON",
+        "startDate": "May 2022",
+        "endDate": "Aug 2022",
+        "description": [
+          "Implemented accessibility standards in the Workforce Management system, adhering to W3C guidelines",
+          "Incorporated timezone support into the employee work planner and synchronized it with the visual graphs",
+          "Integrated web components into the codebase and improved frontend using Typescript, jQuery, and KnockoutJS"
+        ]
+      },
+      {
+        "position": "Web Developer",
+        "company": "Where Dreams Connect",
+        "location": "Toronto, ON",
+        "startDate": "Jun 2020",
+        "endDate": "Nov 2020",
+        "description": [
+          "Developed a WordPress website and managed the Content Management System and hosting services",
+          "Implemented SEO strategies including blog writing and social media marketing, generating 20% extra leads"
+        ]
+      }
+    ]
+  },
+  "projects": []
+}

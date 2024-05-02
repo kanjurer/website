@@ -1,15 +1,15 @@
 ---
 import Steps from '@/components/widgets/Steps.astro';
+import data from '@/assets/data/data.json';
+const items = data.resume.education.map((e) => {
+  return {
+    title: `${e.degree} <br /> 
+    <span class="font-normal">${e.school}</span> <br /> 
+    <span class="text-sm font-normal">${e.location}</span> <br /> 
+    <span class="text-sm font-normal">${e.startDate} - ${e.endDate}</span>`,
+    icon: 'tabler:school',
+  };
+});
 ---
 
-<Steps
-  id="resume"
-  title="Education"
-  items={[
-    {
-      title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2021 - 2025</span>`,
-      icon: 'tabler:school',
-    },
-  ]}
-  classes={{ container: 'max-w-3xl' }}
-/>
+<Steps id="resume" title="Education" items={items} classes={{ container: 'max-w-3xl' }} />
