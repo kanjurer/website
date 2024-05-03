@@ -17,8 +17,15 @@ module.exports = {
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        enter: {
+          '0%': { transform: 'translate(-1200px,0)' },
+          '100%': { transform: 'translate(0px,0)' },
+        },
+      },
       animation: {
         'bounce-slow': 'bounce 20s infinite',
+        enter: 'enter 1.5s ease-in-out',
       },
     },
   },
