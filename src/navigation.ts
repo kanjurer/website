@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     { text: 'Home', href: '/' },
     { text: 'Resume', href: '/resume' },
-    { text: 'Projects', href: '/projects' },
+    // { text: 'Projects', href: '/projects' },
     { text: 'Blog', href: '/blog/1' },
     { text: 'Contact', href: '/contact' },
   ],
