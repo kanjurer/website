@@ -1,36 +1,38 @@
 ---
 import Pfp from '@/assets/images/pfp.png';
 import Content from '@/components/widgets/Content.astro';
+import Name from './Name.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Content
   id="about"
   columns={3}
   items={[
-    {
-      icon: 'github-mark',
-      callToAction: {
-        target: '_blank',
-        text: 'Github',
-        href: 'https://github.com/kanjurer',
-      },
-    },
-    {
-      icon: 'tabler:brand-linkedin',
-      callToAction: {
-        target: '_blank',
-        text: '',
-        href: 'https://linkedin.com/in/kanav-bhardwaj',
-      },
-    },
-    {
-      icon: 'tabler:brand-pinterest',
-      callToAction: {
-        target: '_blank',
-        text: 'Pinterest',
-        href: '#',
-      },
-    },
+    // {
+    //   icon: 'github-mark',
+    //   callToAction: {
+    //     target: '_blank',
+    //     text: 'Github',
+    //     href: 'https://github.com/kanjurer',
+    //   },
+    // },
+    // {
+    //   icon: 'tabler:brand-linkedin',
+    //   callToAction: {
+    //     target: '_blank',
+    //     text: '',
+    //     href: 'https://linkedin.com/in/kanav-bhardwaj',
+    //   },
+    // },
+    // {
+    //   icon: 'tabler:brand-pinterest',
+    //   callToAction: {
+    //     target: '_blank',
+    //     text: 'Pinterest',
+    //     href: '#',
+    //   },
+    // },
   ]}
   image={{
     src: Pfp,
@@ -40,7 +42,7 @@ import Content from '@/components/widgets/Content.astro';
   isReversed
 >
   <Fragment slot="content">
-    <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+    <Name />
     <p>
       Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
       pixel becomes a brushstroke in the canvas of imagination.

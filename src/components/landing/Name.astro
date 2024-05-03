@@ -1,0 +1,41 @@
+---
+
+---
+
+<h2 id="big-name" class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+  <span class="font-mono text-blue-500">this</span>
+  <span class="font-mono">.</span>
+  <span class="font-mono text-pink-400">Kanav()</span>
+</h2>
+
+<script async>
+  const words = ['this', '.', 'Kanav()'];
+  let i = 0;
+  let j = 0;
+  let currentWord = '';
+  let parentEl = document.getElementById('big-name');
+  // reset the text first
+  for (let k = 0; k < 3; k++) {
+    parentEl.children[k].textContent = '';
+  }
+  let childEl;
+  function type() {
+    currentWord = words[i];
+    childEl = parentEl.children[i];
+    childEl.textContent = currentWord.substring(0, j + 1);
+    j++;
+    if (j === currentWord.length) {
+      j = 0;
+      i++;
+      if (i === words.length) {
+        i = 0;
+        j = 0;
+        childEl = null;
+        currentWord = '';
+        return;
+      }
+    }
+    setTimeout(type, 100);
+  }
+  type();
+</script>
