@@ -3,6 +3,7 @@ import Pfp from '@/assets/images/pfp.png';
 import Content from '@/components/widgets/Content.astro';
 import Name from './Name.astro';
 import { Icon } from 'astro-icon/components';
+import FloatingIcons from './FloatingIcons.astro';
 ---
 
 <Content
@@ -43,17 +44,15 @@ import { Icon } from 'astro-icon/components';
 >
   <Fragment slot="content">
     <Name />
-    <p>
-      Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-      pixel becomes a brushstroke in the canvas of imagination.
-    </p>
     <br />
     <p>
       I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details
       of typography, or the vibrant hues of nature during my outdoor escapades.
     </p>
     <br />
-    <p>If you're curious to dive deeper into my work, you can follow me:</p>
+    <p>If you're curious to dive deeper into my work, you can follow me.</p>
+    <br />
+    <FloatingIcons />
   </Fragment>
 
   <Fragment slot="bg">
