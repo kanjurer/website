@@ -1,4 +1,4 @@
 export const SITE = {
-  name: 'My Site',
-  description: 'My site description',
+  name: 'kanjurer.xyz',
+  description: 'My personal website',
 };

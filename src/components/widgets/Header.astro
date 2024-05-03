@@ -33,19 +33,6 @@ export interface Props {
   showRssFeed?: boolean;
   position?: string;
 }
-const links = [
-  { text: 'Home', href: '/' },
-  { text: 'Resume', href: '/resume' },
-  { text: 'Projects', href: '/projects' },
-  { text: 'Blog', href: '/blog/1' },
-  { text: 'Contact', href: '/contact' },
-];
-const actions = [
-  {
-    text: 'Resume',
-    href: '/resume-pdf',
-  },
-];
 const {
   id = 'header',
   isSticky = false,
@@ -53,6 +40,8 @@ const {
   isFullWidth = false,
   showRssFeed = false,
   position = 'center',
+  links = [],
+  actions = [],
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;

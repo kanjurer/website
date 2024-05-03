@@ -1,7 +1,6 @@
 ---
 import Layout from '@/layouts/PageLayout.astro';
 
-import Header from '@/components/widgets/Header.astro';
 import WorkExperience from '@/components/resume/WorkExperience.astro';
 import Education from '@/components/resume/Education.astro';
 
@@ -11,9 +10,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="header">
-    <Header isSticky />
-  </Fragment>
   <Education />
   <WorkExperience />
 </Layout>
