@@ -11,7 +11,7 @@ export const headerData = {
   actions: [
     {
       text: 'Resume',
-      href: '/resume-pdf',
+      href: '/resume.pdf',
       target: '_blank',
     },
   ],
