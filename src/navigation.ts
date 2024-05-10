@@ -8,13 +8,13 @@ export const headerData = {
     { text: 'Blog', href: '/blog/1' },
     { text: 'Contact', href: '/contact' },
   ],
-  actions: [
-    {
-      text: 'Resume',
-      href: '/resume.pdf',
-      target: '_blank',
-    },
-  ],
+  // actions: [
+  //   {
+  //     text: 'Resume',
+  //     href: '/resume.pdf',
+  //     target: '_blank',
+  //   },
+  // ],
 };
 
 export const footerData = {

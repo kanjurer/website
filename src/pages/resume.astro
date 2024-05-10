@@ -3,6 +3,7 @@ import Layout from '@/layouts/PageLayout.astro';
 
 import WorkExperience from '@/components/resume/WorkExperience.astro';
 import Education from '@/components/resume/Education.astro';
+import Hero from '@/components/widgets/Hero.astro';
 
 const metadata = {
   title: 'kanjurer website',
@@ -10,6 +11,21 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'My Resume',
+        href: '/resume.pdf',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title"> Resume </Fragment>
+
+    <Fragment slot="subtitle"> This is my resume. You can download it by clicking the button below. </Fragment>
+  </Hero>
   <Education />
   <WorkExperience />
 </Layout>
