@@ -1,0 +1,81 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<BaseLayout
+  title="Kanav Bhardwaj"
+  description="Personal website of Kanav Bhardwaj. Thoughts, explorations, and writing."
+>
+  <Header />
+
+  <section class="intro">
+    <h1>Hi, I'm Kanav.</h1>
+
+    <p>
+      I'm a software engineer interested in artificial intelligence,
+      mathematics, physics, and understanding how things work.
+    </p>
+
+    <p>
+      I enjoy exploring ideas, building things, and learning about subjects
+      beyond my immediate field. This website is a place to document some of
+      those explorations and share what I find interesting.
+    </p>
+
+    <p>
+      Outside of work, I'm usually learning something new, reading,
+      or figuring out what to build next.
+    </p>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .intro {
+    margin-bottom: 64px;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.04em;
+    margin: 0 0 28px;
+  }
+
+  .intro p {
+    color: #55514c;
+    line-height: 1.9;
+    margin-bottom: 18px;
+  }
+
+  .writing h2 {
+    font-size: 1.65rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .all-posts {
+    display: inline-block;
+    margin-top: 32px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .empty {
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 600px) {
+    .intro h1 {
+      font-size: 2.1rem;
+    }
+  }
+</style>

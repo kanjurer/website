@@ -1,0 +1,61 @@
+---
+const links = [
+  { label: "About Me", href: "/about/" },
+  { label: "Blog", href: "/blog/" },
+];
+---
+
+<header class="header">
+  <a href="/blog" class="brand">Kanav Bhardwaj</a>
+
+  <nav aria-label="Main navigation">
+    {links.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .brand {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  nav a {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    transition: color 150ms ease;
+  }
+
+  nav a:hover {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  @media (max-width: 480px) {
+    .header {
+      margin-bottom: 48px;
+    }
+
+    nav {
+      gap: 16px;
+    }
+  }
+</style>

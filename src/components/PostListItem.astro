@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  href: string;
+}
+
+const { title, description, date, href } = Astro.props;
+
+const formattedDate = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<article class="post">
+  <div class="post-heading">
+    <a href={href}>{title}</a>
+    <time datetime={date.toISOString()}>{formattedDate}</time>
+  </div>
+
+  {description && <p>{description}</p>}
+</article>
+
+<style>
+  .post-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .post-heading a {
+    font-weight: 500;
+  }
+
+  .post-heading time {
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .post p {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    margin: 4px 0 0;
+  }
+
+  @media (max-width: 600px) {
+    .post-heading {
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+</style>
