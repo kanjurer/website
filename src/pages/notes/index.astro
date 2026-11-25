@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
 
-const notes = (await getCollection("notes", ({ data }) => !data.draft)).sort(
+const notes = (await getCollection('notes', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.title.localeCompare(b.data.title),
 );
 ---
@@ -22,7 +22,9 @@ const notes = (await getCollection("notes", ({ data }) => !data.draft)).sort(
       <ul>
         {notes.map((note) => (
           <li>
-            <a href={`/notes/${note.id}/`}>{note.data.title}</a>
+            <a href={`${import.meta.env.BASE_URL}notes/${note.id}/`}>
+              {note.data.title}
+            </a>
           </li>
         ))}
       </ul>
