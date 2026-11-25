@@ -6,6 +6,6 @@ export default defineConfig({
   site: 'https://kanjurer.github.io',
   base: '/website',
   redirects: {
-    "/website/": "/website/blog/",
+    "/": "/blog/",
   },
 });
