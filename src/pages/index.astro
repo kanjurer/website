@@ -1,0 +1,17 @@
+---
+const blogUrl = `${import.meta.env.BASE_URL}/blog`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0;url=${blogUrl}`} />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <p>
+      Redirecting to <a href={blogUrl}>blog</a>...
+    </p>
+  </body>
+</html>
