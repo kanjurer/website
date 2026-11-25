@@ -1,0 +1,119 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+export async function getStaticPaths() {
+  const notes = await getCollection("notes", ({ data }) => !data.draft);
+
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<BaseLayout
+  title={`${note.data.title} | Notes | Kanav Bhardwaj`}
+  description={note.data.description}
+>
+  <Header />
+
+  <article>
+    <header class="note-header">
+      <a href="/notes/" class="back-link">← All notes</a>
+      <h1>{note.data.title}</h1>
+      {note.data.description && <p class="description">{note.data.description}</p>}
+    </header>
+
+    <div class="note-content">
+      <Content />
+    </div>
+  </article>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .note-header {
+    max-width: 900px;
+    margin-bottom: 44px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    margin: 0 0 14px;
+    font-size: clamp(2.8rem, 6vw, 4.1rem);
+  }
+
+  .description {
+    max-width: 760px;
+    margin: 20px 0 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .note-content {
+    max-width: 720px;
+    color: #464c48;
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .note-content :global(h2) {
+    margin-top: 48px;
+    margin-bottom: 16px;
+    font-size: 2rem;
+    letter-spacing: -0.035em;
+  }
+
+  .note-content :global(h3) {
+    margin-top: 35px;
+    margin-bottom: 12px;
+    font-size: 1.55rem;
+    letter-spacing: -0.025em;
+  }
+
+  .note-content :global(p) {
+    margin-bottom: 24px;
+  }
+
+  .note-content :global(a) {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  .note-content :global(ul),
+  .note-content :global(ol) {
+    padding-left: 26px;
+    margin-bottom: 26px;
+  }
+
+  .note-content :global(pre) {
+    overflow-x: auto;
+    padding: 18px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: #f2f3f0;
+    font-size: 0.85rem;
+  }
+
+  .note-content :global(blockquote) {
+    margin: 30px 0;
+    padding: 3px 0 3px 22px;
+    border-left: 2px solid #9aab9e;
+    color: var(--color-muted);
+  }
+</style>

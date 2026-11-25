@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const notes = (await getCollection("notes", ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.title.localeCompare(b.data.title),
+);
+---
+
+<BaseLayout
+  title="Notes | Kanav Bhardwaj"
+  description="Study notes and ideas by Kanav Bhardwaj."
+>
+  <Header />
+
+  <section aria-label="Notes">
+    <h1>Notes</h1>
+
+    {notes.length > 0 ? (
+      <ul>
+        {notes.map((note) => (
+          <li>
+            <a href={`/notes/${note.id}/`}>{note.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No notes yet.</p>
+    )}
+  </section>
+
+  <Footer />
+</BaseLayout>
