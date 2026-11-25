@@ -7,6 +7,6 @@ export default defineConfig({
   base: '/website',
   trailingSlash: 'never',
   redirects: {
-    "/": "/website/blog/",
+    "/website": "/website/blog/",
   },
 });
