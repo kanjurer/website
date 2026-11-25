@@ -1,8 +1,8 @@
 ---
 const links = [
-  { label: 'About Me', href: `${import.meta.env.BASE_URL}about/` },
-  { label: 'Blog', href: `${import.meta.env.BASE_URL}blog/` },
-  { label: 'Notes', href: `${import.meta.env.BASE_URL}notes/` },
+  { label: 'About Me', href: `${import.meta.env.BASE_URL}/about/` },
+  { label: 'Blog', href: `${import.meta.env.BASE_URL}/blog/` },
+  { label: 'Notes', href: `${import.meta.env.BASE_URL}/notes/` },
 ];
 
 interface Props {
@@ -14,7 +14,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class:list={['header', { compact }]}>
-  <a href="/" class="brand">
+  <a href="/website/" class="brand">
     Kanav Bhardwaj
   </a>
 

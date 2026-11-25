@@ -23,7 +23,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
           title={post.data.title}
           description={post.data.description}
           date={post.data.pubDate}
-          href={`${import.meta.env.BASE_URL}blog/${post.id}/`}
+          href={`${import.meta.env.BASE_URL}/blog/${post.id}/`}
         />
       ))}
     </div>
