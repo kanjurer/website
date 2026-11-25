@@ -42,81 +42,85 @@ const formattedDate = pubDate.toLocaleDateString("en-US", {
 
 <style>
   .article-header {
-    margin-bottom: 40px;
+    margin-bottom: 44px;
   }
 
   .back-link {
     display: inline-block;
     color: var(--color-muted);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-bottom: 32px;
   }
 
   h1 {
-    font-size: 2.5rem;
-    letter-spacing: -0.04em;
-    margin: 0 0 12px;
+    max-width: 900px;
+    font-size: clamp(2.8rem, 6vw, 4.1rem);
+    margin: 0 0 14px;
   }
 
   time {
     color: var(--color-muted);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .description {
     color: var(--color-muted);
-    margin-top: 20px;
+    max-width: 760px;
+    margin: 20px 0 0;
     font-size: 1.05rem;
+    line-height: 1.75;
   }
 
   .article-content {
-    color: #45413c;
+    max-width: 720px;
+    color: #464c48;
+    font-size: 1rem;
     line-height: 1.9;
   }
 
   .article-content :global(h2) {
-    font-size: 1.8rem;
-    margin-top: 44px;
+    font-size: 2rem;
+    letter-spacing: -0.035em;
+    margin-top: 48px;
+    margin-bottom: 16px;
   }
 
   .article-content :global(h3) {
-    font-size: 1.4rem;
-    margin-top: 32px;
+    font-size: 1.55rem;
+    letter-spacing: -0.025em;
+    margin-top: 35px;
+    margin-bottom: 12px;
   }
 
   .article-content :global(p) {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
 
   .article-content :global(a) {
+    color: var(--color-accent);
     text-decoration: underline;
+    text-decoration-thickness: 1px;
   }
 
   .article-content :global(ul),
   .article-content :global(ol) {
-    padding-left: 24px;
-    margin-bottom: 24px;
+    padding-left: 26px;
+    margin-bottom: 26px;
   }
 
   .article-content :global(pre) {
     overflow-x: auto;
-    padding: 20px;
+    padding: 18px;
     border: 1px solid var(--color-border);
-    border-radius: 6px;
-    background: #f2f0eb;
+    border-radius: 4px;
+    background: #f2f3f0;
     font-size: 0.85rem;
   }
 
   .article-content :global(blockquote) {
-    border-left: 2px solid #c9c2b5;
-    margin: 28px 0;
-    padding-left: 20px;
+    border-left: 2px solid #9aab9e;
+    margin: 30px 0;
+    padding: 3px 0 3px 22px;
     color: var(--color-muted);
-  }
-
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 2rem;
-    }
   }
 </style>

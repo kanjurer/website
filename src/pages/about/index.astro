@@ -11,23 +11,28 @@ import Footer from "@/components/Footer.astro";
   <Header />
 
   <section class="intro">
-    <h1>Hi, I'm Kanav.</h1>
+    <div class="hero-copy">
+      <p class="eyebrow">About</p>
+      <h1>Hi, I'm Kanav.</h1>
 
-    <p>
-      I'm a software engineer interested in artificial intelligence,
-      mathematics, physics, and understanding how things work.
-    </p>
+      <p class="lead">
+        I'm a software engineer interested in artificial intelligence,
+        mathematics, physics, and understanding how things work.
+      </p>
+    </div>
 
-    <p>
-      I enjoy exploring ideas, building things, and learning about subjects
-      beyond my immediate field. This website is a place to document some of
-      those explorations and share what I find interesting.
-    </p>
+    <div class="about-copy">
+      <p>
+        I enjoy exploring ideas, building things, and learning about subjects
+        beyond my immediate field. This website is a place to document some of
+        those explorations and share what I find interesting.
+      </p>
 
-    <p>
-      Outside of work, I'm usually learning something new, reading,
-      or figuring out what to build next.
-    </p>
+      <p>
+        Outside of work, I'm usually learning something new, reading,
+        or figuring out what to build next.
+      </p>
+    </div>
   </section>
 
   <Footer />
@@ -35,47 +40,52 @@ import Footer from "@/components/Footer.astro";
 
 <style>
   .intro {
-    margin-bottom: 64px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: clamp(48px, 9vw, 120px);
+    margin-bottom: 72px;
+  }
+
+  .hero-copy {
+    max-width: 650px;
+  }
+
+  .eyebrow {
+    margin: 0 0 18px;
+    color: var(--color-muted);
+    font-size: 0.82rem;
   }
 
   .intro h1 {
-    font-size: 2.5rem;
-    letter-spacing: -0.04em;
-    margin: 0 0 28px;
+    margin: 0 0 22px;
+    font-size: clamp(3rem, 6vw, 4.5rem);
   }
 
-  .intro p {
-    color: #55514c;
-    line-height: 1.9;
-    margin-bottom: 18px;
+  .lead {
+    max-width: 540px;
+    margin: 0;
+    color: #464c48;
+    font-size: 1.1rem;
+    line-height: 1.75;
   }
 
-  .writing h2 {
-    font-size: 1.65rem;
-    letter-spacing: -0.02em;
-    margin-bottom: 28px;
-  }
-
-  .posts {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .all-posts {
-    display: inline-block;
-    margin-top: 32px;
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-
-  .empty {
-    color: var(--color-muted);
+  .about-copy p {
+    max-width: 660px;
+    margin: 0 0 22px;
+    color: #464c48;
+    font-size: 1rem;
+    line-height: 1.85;
   }
 
   @media (max-width: 600px) {
-    .intro h1 {
-      font-size: 2.1rem;
+    .intro {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .hero-copy {
+      max-width: none;
     }
   }
 </style>

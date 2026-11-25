@@ -3,14 +3,26 @@ const links = [
   { label: "About Me", href: "/about/" },
   { label: "Blog", href: "/blog/" },
 ];
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
-<header class="header">
-  <a href="/blog" class="brand">Kanav Bhardwaj</a>
+<header class:list={["header", { compact }]}>
+  <a href="/blog/" class="brand">Kanav Bhardwaj</a>
 
   <nav aria-label="Main navigation">
     {links.map((link) => (
-      <a href={link.href}>{link.label}</a>
+      <a
+        href={link.href}
+        aria-current={currentPath.startsWith(link.href) ? "page" : undefined}
+      >
+        {link.label}
+      </a>
     ))}
   </nav>
 </header>
@@ -21,41 +33,48 @@ const links = [
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    margin-bottom: 64px;
+    padding-bottom: 17px;
+    margin-bottom: 44px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header.compact {
+    margin-bottom: 0;
   }
 
   .brand {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: -0.03em;
+    font-size: 0.96rem;
+    font-weight: 650;
+    letter-spacing: -0.025em;
     white-space: nowrap;
   }
 
   nav {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 26px;
   }
 
   nav a {
     color: var(--color-muted);
-    font-size: 0.875rem;
-    transition: color 150ms ease;
+    font-size: 0.84rem;
+    font-weight: 500;
   }
 
-  nav a:hover {
+  nav a[aria-current="page"] {
     color: var(--color-text);
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
   }
 
   @media (max-width: 480px) {
     .header {
-      margin-bottom: 48px;
-    }
-
-    nav {
+      margin-bottom: 32px;
       gap: 16px;
     }
+
+    nav { gap: 16px; }
   }
 </style>

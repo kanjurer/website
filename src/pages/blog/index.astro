@@ -1,26 +1,22 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import PostListItem from "@/components/PostListItem.astro";
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import PostListItem from '@/components/PostListItem.astro';
 
-const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+);
 ---
 
 <BaseLayout
   title="Blog | Kanav Bhardwaj"
   description="Writing, thoughts, and explorations by Kanav Bhardwaj."
 >
-  <Header />
+  <Header compact />
 
   <section>
-    <h1>Writing</h1>
-
-    <p class="intro">
-      Thoughts, explorations, and things I've learned along the way.
-    </p>
-
     <div class="posts">
       {posts.map((post) => (
         <PostListItem
@@ -55,7 +51,6 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, 
   .posts {
     display: flex;
     flex-direction: column;
-    gap: 28px;
   }
 
   .empty {

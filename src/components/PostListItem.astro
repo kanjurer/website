@@ -17,7 +17,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
 <article class="post">
   <div class="post-heading">
-    <a href={href}>{title}</a>
+    <a class="post-title" href={href}>{title}</a>
     <time datetime={date.toISOString()}>{formattedDate}</time>
   </div>
 
@@ -29,29 +29,39 @@ const formattedDate = date.toLocaleDateString("en-US", {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 16px;
+    gap: 24px;
   }
 
-  .post-heading a {
-    font-weight: 500;
+  .post {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .post-title {
+    font-size: 1.06rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   .post-heading time {
     color: var(--color-muted);
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     white-space: nowrap;
   }
 
   .post p {
     color: var(--color-muted);
-    font-size: 0.875rem;
-    margin: 4px 0 0;
+    max-width: 680px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 5px 0 0;
   }
 
   @media (max-width: 600px) {
     .post-heading {
       flex-direction: column;
-      gap: 2px;
+      align-items: flex-start;
+      gap: 5px;
     }
   }
 </style>
