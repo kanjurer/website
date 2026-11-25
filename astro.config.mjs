@@ -5,8 +5,8 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://kanjurer.github.io',
   base: '/website',
-  trailingSlash: 'always',
+  trailingSlash: 'never',
   redirects: {
-    "/": "/blog/",
+    "/": "/website/blog/",
   },
 });
