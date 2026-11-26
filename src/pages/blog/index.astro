@@ -29,7 +29,11 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
     </div>
 
     {posts.length === 0 && (
-      <p class="empty">Nothing here yet. Check back later.</p>
+      <p class="empty">
+        I updated my website on November 2026, I have a few blogs in draft which
+        I am working on. I will be putting one out in December. Stay tuned, as I
+        write this while on vacation.
+      </p>
     )}
   </section>
 

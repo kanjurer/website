@@ -1,7 +1,7 @@
 ---
 title: "LLM from scratch"
 description: "These are my notes on building a large language model from scratch."
-draft: true
+draft: false
 ---
 
 # Overview
