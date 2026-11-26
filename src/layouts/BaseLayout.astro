@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = "Kanav Bhardwaj",
-  description = "Personal website of Kanav Bhardwaj."
+  title = 'Kanav Bhardwaj',
+  description = 'Personal website of Kanav Bhardwaj.',
 } = Astro.props;
 ---
 
@@ -16,9 +16,12 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
+    />
 
     <title>{title}</title>
-
   </head>
 
   <body>
@@ -30,7 +33,7 @@ const {
 
 <style is:global>
   :root {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #242825;
     background: #fcfcfa;
 

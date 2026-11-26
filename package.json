@@ -12,6 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.4.12"
+    "@astrojs/markdown-remark": "^7.3.10",
+    "astro": "^7.4.12",
+    "katex": "^0.19.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0"
   }
 }
