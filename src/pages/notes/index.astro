@@ -30,7 +30,7 @@ const categories = Object.groupBy(notes, (note) => {
         <ul>
           {categoryNotes?.map((note) => (
             <li>
-              <a href={`${import.meta.env.BASE_URL}/notes/${note.id}/`}>
+              <a href={`/notes/${note.id}/`}>
                 {note.data.title}
               </a>
             </li>

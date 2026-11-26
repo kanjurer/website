@@ -5,8 +5,8 @@ import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kanjurer.github.io',
-  base: '/website',
+  site: 'https://www.kanjurer.xyz',
+  base: '/',
   trailingSlash: 'ignore',
   image: {
     layout: 'constrained',

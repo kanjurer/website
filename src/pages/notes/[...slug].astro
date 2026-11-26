@@ -25,7 +25,7 @@ const { Content } = await render(note);
 
   <article>
     <header class="note-header">
-      <a href={`${import.meta.env.BASE_URL}/notes/`} class="back-link">← All notes</a>
+      <a href={`/notes/`} class="back-link">← All notes</a>
       <h1>{note.data.title}</h1>
       {note.data.description && <p class="description">{note.data.description}</p>}
     </header>
